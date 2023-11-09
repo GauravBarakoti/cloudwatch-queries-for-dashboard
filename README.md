@@ -1,4 +1,8 @@
-# CloudWatch Queries
+# CloudWatch Queries for IIS logs
+
+First please configure the CloudWatch with Windows.
+
+Remember, While installing the cloudwatch-agent provide the logs path of the IIS-server.
 
 Here I'm using a specific logging pattern you can adjust the pattern and parse according to the logs pattern.
 
