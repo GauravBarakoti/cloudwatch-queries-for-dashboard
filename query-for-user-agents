@@ -1,0 +1,5 @@
+fields @message
+| parse @message "* * * * /* - * * *" as date, time, instanceip, method, uri_query, ip_hitting, user_agent 
+| stats count(user_agent) as visits by user_agent
+| sort visits desc
+| limit 6

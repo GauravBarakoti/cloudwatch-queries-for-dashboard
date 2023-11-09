@@ -1,0 +1,5 @@
+fields @message
+| parse @message "* * * * /* - * *" as date, time, instanceip, method, uri_query, ip_hitting
+| stats count(ip_hitting) as max_hits by ip_hitting
+| sort max_hits  desc
+| limit 7

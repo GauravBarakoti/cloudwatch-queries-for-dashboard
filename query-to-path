@@ -1,0 +1,6 @@
+fields @message
+| parse @message "* * * * /* - " as date, time, instanceip, method, uri_query
+| filter !isblank(uri_query)
+| stats count(uri_query) as uri_quries by uri_query
+| sort uri_quries  desc
+| limit 6

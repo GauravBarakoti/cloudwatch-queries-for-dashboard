@@ -1,0 +1,4 @@
+fields @message
+| parse @message "* * * * /* - * * * *" as date, time, instanceip, method, uri_query, ip_hitting, user_agent, status 
+| stats count(status) as status_code by status
+| sort status_code desc
